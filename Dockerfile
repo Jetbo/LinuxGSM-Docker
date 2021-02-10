@@ -26,7 +26,8 @@ RUN apt-get install -y \
     lib32gcc1 \
     lib32stdc++6 \
     python3 \
-    cpio
+    cpio \
+    procps
 
 ## Install LinuxGSM
 RUN wget https://linuxgsm.com/dl/linuxgsm.sh
