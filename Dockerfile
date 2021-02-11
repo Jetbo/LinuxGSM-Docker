@@ -29,6 +29,9 @@ RUN apt-get install -y \
     cpio \
     procps
 
+## Get LinuxGSM
+RUN wget https://linuxgsm.com/dl/linuxgsm.sh
+
 ## Setup LinuxGSM user
 RUN groupadd -g 750 -o linuxgsm && \
   adduser --uid 750 --disabled-password --gecos "" --ingroup linuxgsm linuxgsm && \
@@ -41,8 +44,5 @@ RUN groupadd -g 750 -o linuxgsm && \
 USER linuxgsm
 ENV PATH=$PATH:/home/linuxgsm
 WORKDIR /home/linuxgsm
-
-## Get LinuxGSM
-RUN wget https://linuxgsm.com/dl/linuxgsm.sh
 
 ENTRYPOINT ["bash"]
