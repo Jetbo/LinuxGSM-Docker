@@ -29,10 +29,10 @@ RUN apt-get install -y \
     cpio \
     procps
 
-## Get LinuxGSM
-RUN wget https://linuxgsm.com/dl/linuxgsm.sh
+# Get LinuxGSM
+RUN wget -O linuxgsm.sh https://linuxgsm.sh
 
-## Setup LinuxGSM user
+# Setup LinuxGSM user
 RUN groupadd -g 750 -o linuxgsm && \
   adduser --uid 750 --disabled-password --gecos "" --ingroup linuxgsm linuxgsm && \
   chown linuxgsm:linuxgsm /linuxgsm.sh && \
